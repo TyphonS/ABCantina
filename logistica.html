@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-config.css">    
+    <link rel="stylesheet" href="css/cards.css">  
+    <link rel="shortcut icon" href="img/Lubritec.ico" />   
+    <link rel="stylesheet" href="css/logistica.css"></link> 
+    <script src="https://kit.fontawesome.com/684301185d.js"> </script>
+    <script type="text/javascript"> 
+     function muda() {
+        var opcaoValor = document.getElementById("seletor").options[document.getElementById("seletor").selectedIndex].value;
+        if( opcaoValor === "1"||opcaoValor === "2"||opcaoValor === "3"){
+            document.getElementById("caneta2").style.display="none";
+            document.getElementById("caneta").style.display="block";   
+        }
+        
+    }
+    
+    function Tipo(){
+      var Valor_select = document.getElementById("Prod-tipo").options[document.getElementById("Prod-tipo").selectedIndex].value;
+      if( Valor_select === "1"){
+            document.getElementById("Prod-bebida").style.display="none";
+            document.getElementById("Prod-comida").style.display="block";
+        }else if(Valor_select === "2"){
+            document.getElementById("Prod-comida").style.display="none";
+            document.getElementById("Prod-bebida").style.display="block";
+        }else if(Valor_select === "0"){
+            document.getElementById("Prod-comida").style.display="none";
+            document.getElementById("Prod-bebida").style.display="none";
+        }
+    }
+    </script>
+    <title>Cantina</title>
+    
+  </head>
+  <body>
+    <div class="content">
+        <div class="topo">
+          <div class="topo-interno">
+              <div class="logomarca">
+                <a href="index.html"><img src="img/logo.PNG" width="100" height="100" alt=""></a>
+              </div>
+              <div class="menu">
+                  <ul>
+                      <li><img src="img/document.png" width="35" height="35" alt=""></li>
+                      <li><img src="img/person2.png" width="35" height="35" alt=""></li>
+                      <li><a href="index.html"><img src="img/logout.png" width="35" height="35" alt=""></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+        
+        <div class="container">
+            <div id="log-conteudo">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active bestilo" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><img src="img/produtos.png" width="100"><br>Produtos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link bestilo" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><img src="img/responsaveis.png" width="100"><br>Responsáveis</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link bestilo" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><img src="img/alunos.png" width="100"><br>Alunos</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div id="prod-content">
+                            <div id="prod-item">
+                                <!-- MODAL CADASTRAR PRODUTO-->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cadastrar</button>
+                                
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form>
+                                          <div class="mb-3">
+                                            <select name="seletor" id="Prod-tipo" class="form-control" onchange="Tipo()" required>
+                                              <option value="0" selected>Selecione o tipo do produto</option>
+                                              <option value="1">Comida</option>
+                                              <option value="2">Bebida</option>
+                                          </select>
+                                          </div>
+                                          <div class="mb-3" id="Prod-comida">
+                                            <label for="message-text" class="col-form-label" style="padding-left: 210px;">Comida:</label>
+                                            <div class="row "> 
+                                              <div class="col-sm-3">
+                                                <input type="number" class="form-control" id="recipient-cod-c" placeholder="Cod" required> 
+                                              </div>
+                                              <div class="col-sm-3">
+                                                <input type="number" class="form-control" id="recipient-qte-c" placeholder="Qte" required> 
+                                              </div>
+                                              <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="recipient-name-c" placeholder="Nome" required> <br>
+                                              </div>
+                                              <div class="col">
+                                                <textarea cols="20" class="form-control" id="recipient-ingredientes-c" placeholder="Informe os ingredientes" required></textarea><br>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-sm-4">
+                                                <input type="number" class="form-control" id="recipient-preco" placeholder="Preço: R$" required> 
+                                              </div>
+                                              <div class="col-sm-8">
+                                                <input type="file" class="form-control hidden" id="upload_imagem-c" required>
+                                                <label for="upload_imagem">Selecione uma imagem</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="mb-3" id="Prod-bebida">
+                                            <label for="message-text" class="col-form-label" style="padding-left: 210px;">Bebida:</label>
+                                            <div class="row "> 
+                                              <div class="col-sm-3">
+                                                <input type="number" class="form-control" id="recipient-cod-b" placeholder="Cod" required> 
+                                              </div>
+                                              <div class="col-sm-3">
+                                                <input type="number" class="form-control" id="recipient-qte-b" placeholder="Qte" required> 
+                                              </div>
+                                              <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="recipient-name-b" placeholder="Nome" required> <br>
+                                              </div>
+                                              <div class="col">
+                                                <input type="text" class="form-control" id="recipient-fornecedor-b" placeholder="Fornecedor" required> <br>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-sm-4">
+                                                <input type="number" class="form-control" id="recipient-preco-b" placeholder="Preço: R$" required> 
+                                              </div>
+                                              <div class="col-sm-8">
+                                                <input type="file" class="form-control hidden" id="upload_imagem-b" required>
+                                                <label for="upload_imagem">Selecione uma imagem</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                          </div>
+                                        </form>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--MODAL CADASTRAR PRODUTO-->
+                            
+                            <input type="text" id="myInput" onkeyup="Filtro_Produto()" placeholder="Pesquisar por nome" title="Type in a name">
+                            <table id="myTable">
+                                <tr class="header">
+                                  <th scope="col">Imagem</th>
+                                  <th scope="col">Produto</th>
+                                  <th scope="col">Cod</th>
+                                  <th scope="col">Qte</th>
+                                  <th scope="col">Tipo</th>
+                                  <th scope="col">Ação</th>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/coxinha_frango.jpg" width="130" height="100" class="img-thumbnail" alt="..."></td>
+                                    <td>Coxinha de frango</td>
+                                    <td>05</td>
+                                    <td>81</td>
+                                    <td>Comida</td>
+                                    <td>
+                                      <a href="" onclick="return(confirm('Tem certeza que deseja excluir?'))"><img src="../img/excluir.png" width="20" height="20" alt=""></a>
+                                      
+                                        <!-- MODAL EDITAR PRODUTO-->
+                                        <button type="button" class="btn btn-primary bcor" data-bs-toggle="modal" data-bs-target="#editar-prod" data-bs-whatever="@mdo"><img src="../img/editar.png" width="20" height="20" alt=""></button>
+                                        
+                                        <div class="modal fade" id="editar-prod" tabindex="-1" aria-labelledby="editar-prod-label" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="editar-prod-label">Editar Produto</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form>
+                                                  <div class="mb-3" >
+                                                    <div class="row "> 
+                                                      <div class="col-sm-4">
+                                                        <input type="number" class="form-control" id="recipient-cod-editar" placeholder="Cod" required> 
+                                                      </div>
+                                                      <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="recipient-name-editar" placeholder="Nome" required> <br>
+                                                      </div>
+                                                      <div class="col">
+                                                        <textarea cols="20" class="form-control" id="recipient-ingredientes-editar" placeholder="Informe os ingredientes" required></textarea><br>
+                                                      </div>
+                                                    </div>
+                                                    <div class="row">
+                                                      <div class="col-sm-4">
+                                                        <input type="number" class="form-control" id="recipient-preco-editar" placeholder="Preço: R$" required> 
+                                                      </div>
+                                                      <div class="col-sm-8">
+                                                        <input type="file" class="form-control hidden" id="upload_imagem-editar" required>
+                                                        <label for="upload_imagem">Selecione uma imagem</label>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary">Editar</button>
+                                                  </div>
+                                                </form>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- MODAL EDITAR PRODUTO-->
+
+                                        
+                                      <a href=""><img src="../img/bloquear.png" width="20" height="20" alt=""></a>
+                                    </td>
+                                  </tr>
+                              </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div id="prod-content">
+                            <div id="prod-item">
+                                <!-- MODAL CADASTRAR RESPONSAVEL -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCadastrar" data-bs-whatever="@mdo">Cadastrar</button>
+                                
+                                <div class="modal fade" id="exampleModalCadastrar" tabindex="-1" aria-labelledby="exampleModalLabelCadastrar" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabelCadastrar">Cadastrar Responsável</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form>
+                                          <div class="mb-1">
+                                            <input type="text" class="form-control" id="recipient-cpf" placeholder="CPF" required> <br>
+                                            <input type="text" class="form-control" id="recipient-name" placeholder="Nome" required> <br>
+                                            <input type="text" class="form-control" id="recipient-tel" placeholder="Telefone" required> <br>
+                                            <input type="email" class="form-control" id="recipient-email" placeholder="E-mail" required>
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Acesso:</label>
+                                            <input type="text" class="form-control" id="recipient-login" placeholder="Login" required><br>
+                                            <input type="text" class="form-control" id="recipient-senha" placeholder="Senha" required>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                          </div>
+                                        </form>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- MODAL CADASTRAR RESPONSAVEL-->
+                            
+                            <input type="text" id="myInput_Resp" onkeyup="Filtro_Responsavel()" placeholder="Pesquisar Por CPF" title="Type in a name">
+                            <table id="myTable_Resp">
+                                <tr class="header">
+                                  <th scope="col">CPF</th>
+                                  <th scope="col">Nome</th>
+                                  <th scope="col">Contato</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Ação</th>
+                                </tr>
+                                <tr>
+                                  <td>854.695.231.47</td>
+                                  <td>Joao Almeida</td>
+                                  <td>71889587841</td>
+                                  <td>joaoant@hotmail.com</td>
+                                  <td>
+                                      <a href="" onclick="return(confirm('Tem certeza que deseja excluir?'))"><img src="../img/excluir.png" width="20" height="20" alt=""></a>
+                                      
+                                       <!-- MODAL EDITAR RESPONSAVEL-->
+                                       <button type="button" class="btn btn-primary bcor" data-bs-toggle="modal" data-bs-target="#editar-responsavel" data-bs-whatever="@mdo"><img src="../img/editar.png" width="20" height="20" alt=""></button>
+                                        
+                                       <div class="modal fade" id="editar-responsavel" tabindex="-1" aria-labelledby="editar-responsavel-label" aria-hidden="true">
+                                         <div class="modal-dialog">
+                                           <div class="modal-content">
+                                             <div class="modal-header">
+                                               <h5 class="modal-title" id="editar-responsavel-label">Editar Responsavel</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                             </div>
+                                             <div class="modal-body">
+                                               <form>
+                                                <div class="mb-1">
+                                                  <input type="text" class="form-control" id="recipient-cpf-editar" placeholder="CPF" > <br>
+                                                  <input type="text" class="form-control" id="recipient-name-editar" placeholder="Nome" > <br>
+                                                  <input type="text" class="form-control" id="recipient-tel-editar" placeholder="Telefone" > <br>
+                                                  <input type="email" class="form-control" id="recipient-email-editar" placeholder="E-mail" >
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="message-text" class="col-form-label">Acesso:</label>
+                                                  <input type="text" class="form-control" id="recipient-login-editar" placeholder="Login" ><br>
+                                                  <input type="text" class="form-control" id="recipient-senha-editar" placeholder="Senha" >
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                  <button type="submit" class="btn btn-primary">Editar</button>
+                                                </div>
+                                               </form>
+                                             </div>
+                                           </div>
+                                         </div>
+                                       </div>
+                                       <!-- MODAL EDITAR RESPONSAVEL-->
+
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div id="prod-content">
+                            <div id="prod-item">
+
+                            
+                            <input type="text" id="myInput_Aluno" onkeyup="Filtro_Aluno()" placeholder="Pesquisar por nome" title="Type in a name">
+                            <table id="myTable_Aluno">
+                                <tr class="header">
+                                  <th scope="col">Matricula</th>
+                                  <th scope="col">Nome</th>
+                                  <th scope="col">Saldo</th>
+                                </tr>
+                                <tr>
+                                  <td>354841</td>
+                                  <td>Maria Silva</td>
+                                  <td>R$ 58,90</td>
+                                </tr>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+        </div>
+    </div>
+ </div>
+ 
+
+    <div class="card-footer col-md-12 foot">
+      <p>Desenvolvido por ABC Cantina - Todos os direitos reservados &copy;.</p>
+    </div>    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function Filtro_Produto() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        function Filtro_Responsavel() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput_Resp");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable_Resp");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        function Filtro_Aluno() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput_Aluno");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable_Aluno");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

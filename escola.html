@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-escola.css">   
+    <link rel="shortcut icon" href="img/logo.ico" />    
+    <script src="https://kit.fontawesome.com/684301185d.js"> </script>
+    <script src="js/script.js"></script>
+    <script type="text/JavaScript"> function teste(){
+       document.getElementById('cnpj').addEventListener('input', function (e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+    e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');
+  });
+    }</script>
+      
+
+    <title>Escola</title>
+  </head>
+  <body>
+   <div id="teste">
+      <div id="logomarca">
+         <img src="img/logo.png" width= "150px">
+      </div> 
+      <div id="colegio">
+         ABCantina's space
+      </div>
+
+   </div>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+               <div class ="col-sm box">
+                  <h1>ABCantina's space</h1>
+
+                  <p id="descricao">
+                     &emsp;&emsp;Software  veio com intuito de facilitar a administração das cantinas das escolas em época de pandemia, sendo mais seguro e não ocorrendo agloremeração, O software  consiste em uma conta para a Escola (Logistica), podendo adicionar produtos/remover/bloquear produtos, criar conta dos pais/responsáveis dos alunos. A conta dos Pais/responsáveis pode criar a conta de seu filho (aluno), podendo administrar quais comidas podem aparecer para seu filho, retirar extrato do consumo mensal (a partir da data que for gerado o extrato) e podendo recarregar um saldo diário ou mensal para o filho (aluno) para que o mesmo possa utilizar em consumo apenas no site da cantina. A conta de Pai/responsável recebe no e-mail cadastrado sobre o consumo diário de seu filho. A conta do Aluno, funciona mostrando o layout da cantina escolar com as comidas do dia, sucos e outros insumos, mostrando a conta do aluno com a opção de gerar o extrato de seus insumos mensais (a partir da data que for gerado o extrato).
+
+
+                  </p>
+               </div>
+               
+               <div class="col-sm" id="caneta" style="display: unset;">
+                  <h1>Cadastro da Escola</h1> 
+                        <div class = "container form-signin">
+                           </div> <!-- /container -->
+         
+                  <div class = "container2">
+                     <form class = "form-signin row" role = "form" action = "http://127.0.0.1:5500/index.html" >
+                        <h4 class = "form-signin-heading"></h4>
+                        <div class="col-sm-12">
+                           <input type = "text" class = "form-control rounded form" name = "cnpj" id="cnpj" onchange="teste()" placeholder = "CNPJ" required autofocus maxlegth = "18"></br>
+                        </div>
+                        <div class="col-sm-5">
+                           <input type = "text" class = "form-control" name = "nome" placeholder = "NOME" required></br>
+                        </div>
+                        <div class="col-sm-7">
+                           <input type = "tel" class = "form-control" name = "telefone" placeholder = "TELEFONE" required maxlength = "15"></br>
+                        </div>
+                        <div class="col-sm-12">
+                           <input type = "text" class = "form-control" name = "endereco" placeholder = "ENDEREÇO" required></br>
+                        </div>
+                        <div class="col-sm-12">
+                           <input type = "email" class = "form-control" name = "email" placeholder = "e-mail@escola.com" required></br>
+                        </div>
+                        <div class="col-sm-6">
+                           <input type = "text" class = "form-control" name = "Usuario" placeholder = "Usuário Administrador" required></br>
+                        </div>
+                        <div class="col-sm-6">
+                           <input type = "password" class = "form-control" name = "password" placeholder = "Senha Administrador" required></br>
+                        </div>
+                        <div class="col-sm-12">
+                           <textarea name = "sobre" class = "form-control" cols = "20" rows = "8" placeholder = "Sobre Nós" required></textarea></br>
+                        </div>
+                        <div class="col-sm-12">
+                           <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Cadastrar</button><br><br>
+                        </div>
+                     </form>
+            
+            
+                  </div> 
+               </div>
+
+        
+        </div><br>
+    </div>
+ </div>
+
+ <div class="card-footer col-md-12 foot">
+   <p>Desenvolvido por ABC Cantina - Todos os direitos reservados &copy;.</p>
+</div>  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="shortcut icon" href="img/Lubritec.ico" />    
+    <script src="https://kit.fontawesome.com/684301185d.js"> </script>
+    <script type="text/javascript"> 
+     function muda() {
+        var opcaoValor = document.getElementById("seletor").options[document.getElementById("seletor").selectedIndex].value;
+        if( opcaoValor === "1"){
+            document.getElementById("caneta2").style.display="none";
+            document.getElementById("caneta").style.display="block";
+            document.getElementById("caneta3").style.display="none";
+            document.getElementById("caneta4").style.display="none";   
+        }if(opcaoValor === "2"){
+            document.getElementById("caneta2").style.display="none";
+            document.getElementById("caneta").style.display="none";
+            document.getElementById("caneta3").style.display="block";
+            document.getElementById("caneta4").style.display="none"; 
+        }if(opcaoValor === "3"){
+            document.getElementById("caneta2").style.display="none";
+            document.getElementById("caneta").style.display="none";
+            document.getElementById("caneta3").style.display="none";
+            document.getElementById("caneta4").style.display="block"; 
+        }
+        
+    } </script>
+    <title>Cantina</title>
+  </head>
+  <body>
+   <div id="teste">
+      <div id="logomarca">
+         <img src="img/test4.png" width= "300">
+      </div> 
+      <div id="colegio">
+         Colegio tal para exemplo
+      </div>
+
+   </div>
+    <div class="content">
+
+        <div class="container">
+            <div class="row">
+                
+            <div class ="col-sm box">
+            <h1>Cantina da Escola ~tal~</h1>
+
+            <p id="descricao">
+                &emsp;&emsp;Somos a escola ~tal~ e criamos este site para ajudar a as crianças da nossa escola a comprar o comida enquanto esta na escola sem precisar aglomerar em filas na cantina física.
+
+                &emsp;&emsp;Estamos tomando devidas precauções devido ao COVID 19 nossa cantina sera pela internet, possibilitando aos pais para escolherem o que os alunos podem comer e possam recarregar o saldo para seu(s) filho(s) remotamente e aos estudantes a escolher
+                o que comer e aguardar a notificação por e-mail cadastrado de que esta pronto para buscar o insumo na cantina física.
+            </p>
+            </div>
+            <div class = "col-sm" id="caneta2">
+                <h1>Escolha o tipo de usuario</h1>
+                <select name="seletor" id="seletor" class="form-control" onchange="muda()">
+                    <option value="" selected>Selecione seu usuário</option>
+                    <option value="1">Logistica</option>
+                    <option value="2">Responsavel</option>
+                    <option value="3">Aluno</option>
+                </select>
+            </div>
+            <div class="col-sm" id="caneta">
+                <h1>Login Logistica</h1> 
+                     <div class = "container form-signin">
+                        </div> <!-- /container -->
+      
+                        <div class = "container box-x" >
+                  
+                           <form class = "form-signin was-validated" role = "form" action = "http://127.0.0.1:5500/logistica.html" >
+                              <h4 class = "form-signin-heading"></h4>
+                              <input type = "text" class = "form-control" name = "username" placeholder = "Usuário"  required autofocus></br>
+                              <input type = "password" class = "form-control" name = "password" placeholder = "Senha" minlength="8" required></br>
+                              <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Entrar</button>
+                              <div class="invalid-feedback">
+                                 Por favor preencha os dados!
+                               </div>
+                           </form>
+                           
+                           <p><br /> <span style="font-size: medium;"><a class="btn btn-primary" href="index.html">Voltar</a></span></p>
+                     
+                     </div> 
+            </div>
+            <div class="col-sm" id="caneta3" style= "display:none">
+                <h1>Login Responsaveis</h1> 
+                     <div class = "container form-signin">
+                        </div> <!-- /container -->
+      
+                  <div class = "container box-x" >
+               
+                     <form class = "form-signin was-validated" role = "form" action = "http://127.0.0.1:5500/Responsaveis.html" >
+                        <h4 class = "form-signin-heading"></h4>
+                        <input type = "text" class = "form-control" name = "username" placeholder = "Usuário" required autofocus></br>
+                        <input type = "password" class = "form-control" name = "password" placeholder = "Senha" minlength="8" required></br>
+                        <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Entrar</button>
+                        <div class="invalid-feedback">
+                           Por favor preencha os dados!
+                         </div>
+                     </form>
+                     
+                     <p><br /> <span style="font-size: medium;"><a class="btn btn-primary" href="index.html">Voltar</a></span></p>
+                  
+                  </div> 
+            </div>
+            <div class="col-sm" id="caneta4" style= "display:none">
+                <h1>Login Aluno</h1> 
+                     <div class = "container form-signin">
+
+                      </div>
+      
+                     <div class = "container box-x" >
+                  
+                        <form class = "form-signin was-validated" role = "form" action = "http://127.0.0.1:5500/cards.html" >
+                           <h4 class = "form-signin-heading"></h4>
+                           <input type = "text" class = "form-control" name = "username" placeholder = "Usuário" required autofocus></br>
+                           <input type = "password" class = "form-control" name = "password" placeholder = "Senha" minlength="8" required></br>
+                           <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Entrar</button>
+                           <div class="invalid-feedback">
+                              Por favor preencha os dados!
+                            </div>
+                        </form>
+                        
+                        <p><br /> <span style="font-size: medium;"><a class="btn btn-primary" href="index.html">Voltar</a></span></p>
+                     
+                     </div> 
+            </div>
+        
+        </div>
+    </div>
+ </div>
+
+    <div class="card-footer col-md-12">
+      <p>Desenvolvido por ABC Cantina - Todos os direitos reservados &copy;.</p>
+    </div>    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

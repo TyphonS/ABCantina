@@ -1,0 +1,142 @@
+#log-conteudo{
+    height: 700px;
+    margin-top: 70px;
+}
+#pills-tabContent{
+    margin-top: 20px !important;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0.5px ;
+    border: 1px solid black;
+    background-color: white;
+    height: auto;
+    width: auto;
+}
+#prod-content{
+    width: 100%;
+}
+#prod-item{
+    margin: 10px;
+}
+  /* Filtro e tabela Produto*/
+#myInput {
+    background-image: url('../img/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 12px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 10px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  /* Filtro e tabela Produto*/
+
+  /* Filtro e tabela Responsavel */
+  #myInput_Resp{
+    background-image: url('../img/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 12px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 10px;
+  }
+  
+  #myTable_Resp {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+  }
+  
+  #myTable_Resp th, #myTable_Resp td {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  #myTable_Resp tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable_Resp tr.header, #myTable_Resp tr:hover {
+    background-color: #f1f1f1;
+  }
+  /* Filtro e tabela Responsavel */
+
+  /* Filtro e tabela Aluno */
+  #myInput_Aluno {
+    background-image: url('../img/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 12px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 10px;
+  }
+  
+  #myTable_Aluno {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+  }
+  
+  #myTable_Aluno th, #myTable_Aluno td {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  #myTable_Aluno tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable_Aluno tr.header, #myTable_Aluno tr:hover {
+    background-color: #f1f1f1;
+  }
+  /* Filtro e tabela Aluno */
+
+  #Prod-comida{
+    display: none;
+  }
+  #Prod-bebida{
+    display: none;
+  }
+  #Prod-item, #myTable a{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .bcor{
+    background-color: rgba(1,1,1,0);
+    border: none;
+  }
+  .bcor:hover{
+    background-color: rgb(1,1,1,0);
+  }
+  .bestilo{
+    margin-left: 20px;
+    
+  }

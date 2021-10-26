@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+}
+
+body{
+    font-family: 'Roboto Slab', serif;
+    background-image: url(../img/bg3.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:initial;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    min-height: 100%;
+}
+
+.navbar-font{
+    justify-content: center;
+    background-color:#007cc3; 
+    padding: 0px auto 0px auto;
+}
+
+.navbar-font a {
+    justify-content: center;
+    font-size: 20pt; 
+}
+nav a{
+    font-family: 'Lobster', cursive;
+    color: #ffffff !important;
+}
+
+nav a:hover{
+    color: #494949;
+}
+
+.card-footer{
+    position: absolute;
+    padding-bottom: 0px; 
+    width: 100%;
+    background: #004b7e;
+    margin-top: 30px;
+}
+
+.card-footer p , .card-footer p a{
+    text-align: center;
+    color: white;
+}
+
+h1{
+    font-size: 25pt; 
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    margin-top: 50px;
+}
+
+#descricao {
+    margin-top: 2em;
+}
+
+#caneta{
+    display: none;
+}
+
+p, li{
+    text-align:left;
+    font-size: 14pt;
+}
+
+.logo{
+    margin-top: 2.5em;
+    width: 200px;
+}
+.foot{
+    background-color: black;
+}
